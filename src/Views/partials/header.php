@@ -25,6 +25,7 @@ $user = $_SESSION['user'] ?? null;
         <a href="/">首页</a>
         <a href="/products">产品中心</a>
         <a href="/suppliers">供应商</a>
+        <a href="/features">功能规划</a>
         <a href="/resources">外贸资源</a>
         <a href="/cart">采购清单</a>
         <?php if ($user): ?>
