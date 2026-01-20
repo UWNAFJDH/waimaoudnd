@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Controllers\AdminController;
 use App\Controllers\AuthController;
+use App\Controllers\FeatureController;
 use App\Controllers\HomeController;
 use App\Controllers\InquiryController;
 use App\Controllers\OrderController;
@@ -15,6 +16,7 @@ require dirname(__DIR__) . '/src/Database.php';
 require dirname(__DIR__) . '/src/Router.php';
 require dirname(__DIR__) . '/src/Controllers/Controller.php';
 require dirname(__DIR__) . '/src/Controllers/HomeController.php';
+require dirname(__DIR__) . '/src/Controllers/FeatureController.php';
 require dirname(__DIR__) . '/src/Controllers/ProductController.php';
 require dirname(__DIR__) . '/src/Controllers/SupplierController.php';
 require dirname(__DIR__) . '/src/Controllers/InquiryController.php';
@@ -26,6 +28,7 @@ session_start();
 
 $router = new Router();
 $home = new HomeController();
+$feature = new FeatureController();
 $product = new ProductController();
 $supplier = new SupplierController();
 $inquiry = new InquiryController();
@@ -35,6 +38,7 @@ $admin = new AdminController();
 
 $router->get('/', [$home, 'index']);
 $router->get('/resources', [$home, 'resources']);
+$router->get('/features', [$feature, 'index']);
 $router->get('/products', [$product, 'index']);
 $router->get('/product', [$product, 'show']);
 $router->get('/suppliers', [$supplier, 'index']);
